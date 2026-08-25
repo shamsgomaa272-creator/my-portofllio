@@ -3,131 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Shams Gomaa</title>
+    <title>Dashboard - Contact & Messages | Shams Gomaa</title>
     
-
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 min-h-screen flex flex-col justify-between font-['Poppins']">
 
-    
+
     <nav class="bg-white/85 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             
-    
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-105 transition duration-200">
-                    SG
-                </div>
-                <span class="text-xl font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition">
-                
-                </span>
-            </a>
+            
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-105 transition duration-200">
+                        SG
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-slate-900 tracking-tight block leading-none">Admin Dashboard</span>
+                        <span class="text-[10px] font-semibold text-indigo-600 uppercase tracking-wider">Portfolio Management System</span>
+                    </div>
+                </a>
+            </div>
 
         
-            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
-                <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-                <a href="about.html" class="hover:text-indigo-600 transition">About</a>
-                <a href="projects.html" class="hover:text-indigo-600 transition">Projects</a>
-                <a href="contact.html" class="text-indigo-600 font-semibold">Contact</a>
+            <div class="flex flex-wrap items-center gap-2 sm:gap-6 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition px-3 py-1.5">Home & Skills</a>
+                <a href="about.html" class="hover:text-indigo-600 transition px-3 py-1.5">About Me</a>
+                <a href="projects.html" class="hover:text-indigo-600 transition px-3 py-1.5">Projects</a>
+                <a href="contact.html" class="text-indigo-600 font-semibold bg-indigo-50 px-3 py-1.5 rounded-xl border border-indigo-100">Contact & Messages</a>
+                <a href="../contact.html" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-1.5 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shadow-sm">
+                    Live Contact Page &rarr;
+                </a>
             </div>
         </div>
     </nav>
 
 
-    <main class="max-w-6xl mx-auto px-6 py-16 flex-grow w-full">
+    <main class="max-w-7xl mx-auto px-6 py-10 flex-grow w-full space-y-10">
         
-        <div class="mb-12 text-center max-w-2xl mx-auto">
-            <span class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase">
-                Get In Touch
-            </span>
-            <h1 class="text-4xl font-extrabold text-slate-900 mt-3">Let's Work Together</h1>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-                Have a project idea, a question, or just want to say hello? Send me a message and I'll get back to you as soon as possible.
-            </p>
+    
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
+            <div>
+                <span class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide uppercase">
+                    Inbox & Settings
+                </span>
+                <h1 class="text-3xl font-extrabold text-slate-900 mt-2">Contact & Messages Inbox</h1>
+                <p class="text-slate-500 text-sm mt-1">Manage contact info cards and view inquiries submitted through the contact form.</p>
+            </div>
+            <button onclick="saveContactSettings()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-200 transition flex items-center gap-2">
+                <span>Save Contact Settings</span>
+            </button>
         </div>
 
-        <div class="grid md:grid-cols-12 gap-8 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
         
-            <div class="md:col-span-5 space-y-4">
+            <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <h2 class="text-xl font-bold text-slate-900">Contact Information Settings</h2>
+                    <p class="text-xs text-slate-400">Update your public contact cards and headings.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label for="contact-heading" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Section Headline</label>
+                        <input type="text" id="contact-heading" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="e.g. Let's Work Together">
+                    </div>
+
+                    <div>
+                        <label for="contact-desc" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Intro Subtitle</label>
+                        <textarea id="contact-desc" rows="2" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="Sub-heading description..."></textarea>
+                    </div>
+
+                    <div>
+                        <label for="contact-email" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Public Email Address</label>
+                        <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="shams.gomaa@example.com">
+                    </div>
+
+                    <div>
+                        <label for="contact-location" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Location / Availability</label>
+                        <input type="text" id="contact-location" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="Available Remotely">
+                    </div>
+
+                    <div>
+                        <label for="contact-social" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Social / LinkedIn Display Text</label>
+                        <input type="text" id="contact-social" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="LinkedIn Profile">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900">Form Submission Messages</h2>
+                        <p class="text-xs text-slate-400">Inquiries sent by visitors via portfolio contact form.</p>
+                    </div>
+                    <span id="unread-count-badge" class="bg-indigo-50 text-indigo-600 border border-indigo-100 text-xs font-bold px-3 py-1 rounded-full self-start sm:self-auto">
+                        0 Unread
+                    </span>
+                </div>
+
                 
-                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-indigo-200 transition">
-                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
-                        ✉️
-                    </div>
-                    <div class="min-w-0 flex-1">
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Email</p>
-                        <p class="text-xs sm:text-sm font-semibold text-slate-900 mt-0.5 break-all">shams.gomaa@example.com</p>
-                    </div>
+                <div id="messages-list" class="space-y-4">
+                    <!-- Dynamically Rendered -->
                 </div>
-
-                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-teal-200 transition">
-                    <div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
-                        📍
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Location</p>
-                        <p class="text-sm font-semibold text-slate-900 mt-0.5">Available Remotely</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-purple-200 transition">
-                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
-                        🌐
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Socials</p>
-                        <p class="text-sm font-semibold text-indigo-600 mt-0.5 hover:underline cursor-pointer">LinkedIn Profile</p>
-                    </div>
-                </div>
-
             </div>
-
-        
-            <div class="md:col-span-7 bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm">
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Your Name</label>
-                            <input type="text" id="name" placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Your Email</label>
-                            <input type="email" id="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" required>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="subject" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Subject</label>
-                        <input type="text" id="subject" placeholder="Project Inquiry / General Question" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" required>
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Message</label>
-                        <textarea id="message" rows="5" placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" required></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 rounded-xl shadow-lg shadow-indigo-200 transition duration-200">
-                        Send Message &rarr;
-                    </button>
-                </form>
-            </div>
-
         </div>
-
     </main>
 
-
     <footer class="bg-white border-t border-slate-200 text-center py-6 text-slate-500 text-sm">
-        &copy; 2026 Shams Gomaa. All rights reserved.
+        &copy; 2026 Shams Gomaa Portfolio Admin Dashboard. All rights reserved.
     </footer>
 
+    <script src="dashboard.js"></script>
+    <script>
+        let db = getPortfolioData();
+
+        function initContactDashboard() {
+            document.getElementById("contact-heading").value = db.contactInfo.heading || "";
+            document.getElementById("contact-desc").value = db.contactInfo.description || "";
+            document.getElementById("contact-email").value = db.contactInfo.email || "";
+            document.getElementById("contact-location").value = db.contactInfo.location || "";
+            document.getElementById("contact-social").value = db.contactInfo.socialLinkedIn || "";
+
+            renderMessages();
+        }
+
+        function saveContactSettings() {
+            db.contactInfo.heading = document.getElementById("contact-heading").value;
+            db.contactInfo.description = document.getElementById("contact-desc").value;
+            db.contactInfo.email = document.getElementById("contact-email").value;
+            db.contactInfo.location = document.getElementById("contact-location").value;
+            db.contactInfo.socialLinkedIn = document.getElementById("contact-social").value;
+
+            savePortfolioData(db);
+        }
+
+        function renderMessages() {
+            const container = document.getElementById("messages-list");
+            const unreadBadge = document.getElementById("unread-count-badge");
+            
+            const unreadCount = db.messages.filter(m => !m.read).length;
+            unreadBadge.textContent = `${unreadCount} Unread`;
+
+            container.innerHTML = "";
+
+            if (db.messages.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200 text-slate-400 text-sm">
+                        No messages received yet.
+                    </div>
+                `;
+                return;
+            }
+
+            db.messages.forEach(msg => {
+                const card = document.createElement("div");
+                card.className = `p-5 rounded-2xl border transition space-y-3 ${msg.read ? 'bg-slate-50/50 border-slate-200/70' : 'bg-indigo-50/30 border-indigo-200 shadow-sm'}`;
+                card.innerHTML = `
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-bold text-slate-900 text-sm">${msg.name}</h4>
+                                ${!msg.read ? '<span class="bg-indigo-600 text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full">New</span>' : ''}
+                            </div>
+                            <span class="text-xs text-indigo-600 font-medium">${msg.email}</span>
+                        </div>
+                        <span class="text-[11px] text-slate-400 font-medium">${msg.date}</span>
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-bold text-slate-800">${msg.subject}</p>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">${msg.message}</p>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+                        <button onclick="toggleReadStatus(${msg.id})" class="text-xs font-semibold text-slate-600 hover:text-indigo-600">
+                            ${msg.read ? 'Mark as Unread ✉️' : 'Mark as Read ✔️'}
+                        </button>
+                        <div class="flex items-center gap-3">
+                            <a href="mailto:${msg.email}?subject=RE: ${encodeURIComponent(msg.subject)}" class="text-xs font-bold text-indigo-600 hover:underline">
+                                Reply ↩️
+                            </a>
+                            <button onclick="deleteMessage(${msg.id})" class="text-xs font-bold text-rose-500 hover:text-rose-700">
+                                Delete 🗑️
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function toggleReadStatus(id) {
+            const msg = db.messages.find(m => m.id === id);
+            if (msg) {
+                msg.read = !msg.read;
+                savePortfolioData(db);
+                renderMessages();
+            }
+        }
+
+        function deleteMessage(id) {
+            if (confirm("Delete this message permanently?")) {
+                db.messages = db.messages.filter(m => m.id !== id);
+                savePortfolioData(db);
+                renderMessages();
+            }
+        }
+
+        window.onload = initContactDashboard;
+    </script>
 </body>
 </html>

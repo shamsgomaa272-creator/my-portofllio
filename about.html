@@ -3,152 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Shams Gomaa</title>
+    <title>Dashboard - About Me | Shams Gomaa</title>
+    
     
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 min-h-screen flex flex-col justify-between font-['Poppins']">
 
-    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-105 transition duration-200">
-                    SG
-                </div>
-                <span class="text-xl font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition">
-                </span>
-            </a>
+    
+    <nav class="bg-white/85 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-105 transition duration-200">
+                        SG
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-slate-900 tracking-tight block leading-none">Admin Dashboard</span>
+                        <span class="text-[10px] font-semibold text-indigo-600 uppercase tracking-wider">Portfolio Management System</span>
+                    </div>
+                </a>
+            </div>
 
-            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
-                <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
-                <a href="about.html" class="text-indigo-600 font-semibold">About</a>
-                <a href="projects.html" class="hover:text-indigo-600 transition">Projects</a>
-                <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a>
+        
+            <div class="flex flex-wrap items-center gap-2 sm:gap-6 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition px-3 py-1.5">Home & Skills</a>
+                <a href="about.html" class="text-indigo-600 font-semibold bg-indigo-50 px-3 py-1.5 rounded-xl border border-indigo-100">About Me</a>
+                <a href="projects.html" class="hover:text-indigo-600 transition px-3 py-1.5">Projects</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition px-3 py-1.5">Contact & Messages</a>
+                <a href="../about.html" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-1.5 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shadow-sm">
+                    Live About Page &rarr;
+                </a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 py-16 flex-grow w-full">
-        <div class="grid md:grid-cols-12 gap-12 items-start">
-            <div class="md:col-span-7 space-y-6">
-                <span class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase">
-                    Get to know me
+
+    <main class="max-w-7xl mx-auto px-6 py-10 flex-grow w-full space-y-10">
+        
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
+            <div>
+                <span class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide uppercase">
+                    Control Panel
                 </span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                    Passionate about building clean code & intuitive interfaces.
-                </h1>
-                <p class="text-slate-600 leading-relaxed text-base">
-                    Hello! I'm <strong class="text-slate-900">Shams Gomaa</strong>, a web developer based on creating sleek, responsive, and user-centric web applications. I bridge the gap between design and technical implementation.
-                </p>
-                <p class="text-slate-600 leading-relaxed text-base">
-                    My approach emphasizes clean structure, performance optimization, and accessible digital experiences. I enjoy solving complex logic problems and constantly learning modern web ecosystems.
-                </p>
+                <h1 class="text-3xl font-extrabold text-slate-900 mt-2">About Page Management</h1>
+                <p class="text-slate-500 text-sm mt-1">Manage your professional biography, intro title, and tech stack tags.</p>
+            </div>
+            <button onclick="saveAboutSettings()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-200 transition flex items-center gap-2">
+                <span> Save About Settings</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            
+            <div class="lg:col-span-7 space-y-6">
+                
+                
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <h2 class="text-xl font-bold text-slate-900">Biography & Introduction</h2>
+                        <p class="text-xs text-slate-400">Configure text displayed on the About Me section.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label for="about-badge" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Section Badge</label>
+                            <input type="text" id="about-badge" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="e.g. Get to know me">
+                        </div>
+
+                        <div>
+                            <label for="about-title" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Main Headline Title</label>
+                            <input type="text" id="about-title" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="Main title...">
+                        </div>
+
+                        <div>
+                            <label for="about-bio1" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Bio Paragraph 1</label>
+                            <textarea id="about-bio1" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="First paragraph intro..."></textarea>
+                        </div>
+
+                        <div>
+                            <label for="about-bio2" class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Bio Paragraph 2</label>
+                            <textarea id="about-bio2" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition" placeholder="Second paragraph details..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                    <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">Technical Stack Badges</h2>
+                            <p class="text-xs text-slate-400">Manage key skills displayed on the About sidebar.</p>
+                        </div>
+                    </div>
+
+        
+                    <div class="space-y-3">
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Frontend Badges</label>
+                        <div id="frontend-badges" class="flex flex-wrap gap-2">
+                            
+                        </div>
+                        <div class="flex items-center gap-2 pt-2">
+                            <input type="text" id="add-frontend-input" placeholder="Add frontend badge (e.g. React)" class="px-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 flex-1">
+                            <button onclick="addTechBadge('frontend')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-4 py-2 rounded-xl">Add +</button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="space-y-3 pt-4 border-t border-slate-100">
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Backend & Database Badges</label>
+                        <div id="backend-badges" class="flex flex-wrap gap-2">
+                            
+                        </div>
+                        <div class="flex items-center gap-2 pt-2">
+                            <input type="text" id="add-backend-input" placeholder="Add backend badge (e.g. Express.js)" class="px-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 flex-1">
+                            <button onclick="addTechBadge('backend')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-4 py-2 rounded-xl">Add +</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="md:col-span-5 bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/40 space-y-6 hover:shadow-2xl hover:border-indigo-200 transition duration-300">
-                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xs uppercase border border-indigo-100">
-                            TECH
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">Technical Stack</h3>
-                            <p class="text-[11px] font-medium text-slate-400">Core Technologies</p>
-                        </div>
+            
+            <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200/80 shadow-md space-y-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">About Page Live Preview</span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     </div>
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" title="Active Skillset"></span>
+
+                    <div class="space-y-4">
+                        <span id="preview-about-badge" class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide inline-block">
+                            Get to know me
+                        </span>
+                        <h3 id="preview-about-title" class="text-2xl font-extrabold text-slate-900 leading-snug">
+                            Passionate about building clean code & intuitive interfaces.
+                        </h3>
+                        <p id="preview-about-bio1" class="text-slate-600 text-xs leading-relaxed">
+                            Hello! I'm Shams Gomaa...
+                        </p>
+                        <p id="preview-about-bio2" class="text-slate-600 text-xs leading-relaxed">
+                            My approach emphasizes clean structure...
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="space-y-5">
-                    <div>
-                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Frontend Engineering</span>
-                        <div id="frontend-skills" class="flex flex-wrap gap-2">
-                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> HTML5 / CSS3
-                            </div>
-                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> JavaScript (ES6+)
-                            </div>
-                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> Tailwind CSS
-                            </div>
-                        </div>
-                    </div>
 
-                    <div>
-                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Backend & Database</span>
-                        <div id="backend-skills" class="flex flex-wrap gap-2">
-                            <div class="bg-slate-50 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-teal-500"></span> Node.js
-                            </div>
-                            <div class="bg-slate-50 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-teal-500"></span> MongoDB
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Tools & Environment</span>
-                        <div id="tools-skills" class="flex flex-wrap gap-2">
-                            <div class="bg-slate-50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-purple-500"></span> Git & GitHub
-                            </div>
-                            <div class="bg-slate-50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-purple-500"></span> VS Code
-                            </div>
-                        </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 space-y-3">
+                    <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Technical Stack Preview</h4>
+                    <div id="preview-tech-badges" class="flex flex-wrap gap-1.5">
+                        <!-- Preview Badges -->
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+
     <footer class="bg-white border-t border-slate-200 text-center py-6 text-slate-500 text-sm">
-        &copy; 2026 Shams Gomaa. All rights reserved.
+        &copy; 2026 Shams Gomaa Portfolio Admin Dashboard. All rights reserved.
     </footer>
 
+    <script src="dashboard.js"></script>
     <script>
-        fetch('http://localhost:5000/api/skills')
-            .then(res => res.json())
-            .then(res => {
-                const skills = res.data || [];
-                if (skills.length > 0) {
-                    const frontendContainer = document.getElementById('frontend-skills');
-                    const backendContainer = document.getElementById('backend-skills');
-                    const toolsContainer = document.getElementById('tools-skills');
+        let db = getPortfolioData();
 
-                    const front = skills.filter(s => (s.category || '').toLowerCase() === 'frontend');
-                    const back = skills.filter(s => (s.category || '').toLowerCase() === 'backend');
-                    const tools = skills.filter(s => (s.category || '').toLowerCase() !== 'frontend' && (s.category || '').toLowerCase() !== 'backend');
+        function initAboutDashboard() {
+            document.getElementById("about-badge").value = db.about.badge;
+            document.getElementById("about-title").value = db.about.title;
+            document.getElementById("about-bio1").value = db.about.bio1;
+            document.getElementById("about-bio2").value = db.about.bio2;
 
-                    if (front.length > 0 && frontendContainer) {
-                        frontendContainer.innerHTML = front.map(s => `
-                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> ${s.name}
-                            </div>
-                        `).join('');
-                    }
+            renderBadges();
+            updateAboutPreview();
 
-                    if (back.length > 0 && backendContainer) {
-                        backendContainer.innerHTML = back.map(s => `
-                            <div class="bg-slate-50 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-teal-500"></span> ${s.name}
-                            </div>
-                        `).join('');
-                    }
+            ["about-badge", "about-title", "about-bio1", "about-bio2"].forEach(id => {
+                document.getElementById(id).addEventListener("input", updateAboutPreview);
+            });
+        }
 
-                    if (tools.length > 0 && toolsContainer) {
-                        toolsContainer.innerHTML = tools.map(s => `
-                            <div class="bg-slate-50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
-                                <span class="w-2 h-2 rounded-full bg-purple-500"></span> ${s.name}
-                            </div>
-                        `).join('');
-                    }
-                }
-            })
-            .catch(() => {});
+        function updateAboutPreview() {
+            document.getElementById("preview-about-badge").textContent = document.getElementById("about-badge").value || "Get to know me";
+            document.getElementById("preview-about-title").textContent = document.getElementById("about-title").value || "Headline...";
+            document.getElementById("preview-about-bio1").textContent = document.getElementById("about-bio1").value || "Bio 1...";
+            document.getElementById("preview-about-bio2").textContent = document.getElementById("about-bio2").value || "Bio 2...";
+
+            const previewContainer = document.getElementById("preview-tech-badges");
+            previewContainer.innerHTML = "";
+            [...db.about.frontendSkills, ...db.about.backendSkills].forEach(skill => {
+                const badge = document.createElement("span");
+                badge.className = "bg-white border border-slate-200 text-slate-700 text-[10px] font-semibold px-2.5 py-1 rounded-lg";
+                badge.textContent = skill;
+                previewContainer.appendChild(badge);
+            });
+        }
+
+        function renderBadges() {
+            const frontendContainer = document.getElementById("frontend-badges");
+            const backendContainer = document.getElementById("backend-badges");
+
+            frontendContainer.innerHTML = "";
+            backendContainer.innerHTML = "";
+
+            db.about.frontendSkills.forEach((skill, index) => {
+                const el = document.createElement("div");
+                el.className = "bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-xl flex items-center gap-2";
+                el.innerHTML = `<span>${skill}</span> <button onclick="removeBadge('frontend', ${index})" class="text-rose-500 hover:text-rose-700">✕</button>`;
+                frontendContainer.appendChild(el);
+            });
+
+            db.about.backendSkills.forEach((skill, index) => {
+                const el = document.createElement("div");
+                el.className = "bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1 rounded-xl flex items-center gap-2";
+                el.innerHTML = `<span>${skill}</span> <button onclick="removeBadge('backend', ${index})" class="text-rose-500 hover:text-rose-700">✕</button>`;
+                backendContainer.appendChild(el);
+            });
+
+            updateAboutPreview();
+        }
+
+        function addTechBadge(type) {
+            const input = document.getElementById(type === "frontend" ? "add-frontend-input" : "add-backend-input");
+            const val = input.value.trim();
+            if (!val) return;
+
+            if (type === "frontend") {
+                db.about.frontendSkills.push(val);
+            } else {
+                db.about.backendSkills.push(val);
+            }
+
+            input.value = "";
+            savePortfolioData(db);
+            renderBadges();
+        }
+
+        function removeBadge(type, index) {
+            if (type === "frontend") {
+                db.about.frontendSkills.splice(index, 1);
+            } else {
+                db.about.backendSkills.splice(index, 1);
+            }
+            savePortfolioData(db);
+            renderBadges();
+        }
+
+        function saveAboutSettings() {
+            db.about.badge = document.getElementById("about-badge").value;
+            db.about.title = document.getElementById("about-title").value;
+            db.about.bio1 = document.getElementById("about-bio1").value;
+            db.about.bio2 = document.getElementById("about-bio2").value;
+
+            savePortfolioData(db);
+        }
+
+        window.onload = initAboutDashboard;
     </script>
 </body>
 </html>

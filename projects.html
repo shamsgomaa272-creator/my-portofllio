@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Projects | Shams Gomaa</title>
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 min-h-screen flex flex-col justify-between font-['Poppins']">
+
+    <nav class="bg-white/85 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-105 transition duration-200">
+                        SG
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-slate-900 tracking-tight block leading-none">Admin Dashboard</span>
+                        <span class="text-[10px] font-semibold text-indigo-600 uppercase tracking-wider">Portfolio Management System</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 sm:gap-6 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition px-3 py-1.5">Home & Skills</a>
+                <a href="about.html" class="hover:text-indigo-600 transition px-3 py-1.5">About Me</a>
+                <a href="projects.html" class="text-indigo-600 font-semibold bg-indigo-50 px-3 py-1.5 rounded-xl border border-indigo-100">Projects</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition px-3 py-1.5">Contact & Messages</a>
+                <a href="../projects.html" target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-1.5 rounded-xl transition text-xs font-semibold flex items-center gap-1.5 shadow-sm">
+                    Live Projects Page &rarr;
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-10 flex-grow w-full space-y-10">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
+            <div>
+                <span class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide uppercase">
+                    Showcase Controls
+                </span>
+                <h1 class="text-3xl font-extrabold text-slate-900 mt-2">Projects Showcase Management</h1>
+                <p class="text-slate-500 text-sm mt-1">Add new portfolio projects, edit details, tags, icons, or delete existing items.</p>
+            </div>
+            <button onclick="openProjectModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-200 transition flex items-center gap-2">
+                <span>+ Add New Project</span>
+            </button>
+        </div>
+
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamically Rendered -->
+        </div>
+    </main>
+
+    <div id="project-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                <h3 id="project-modal-title" class="text-lg font-bold text-slate-900">Add New Project</h3>
+                <button onclick="closeProjectModal()" class="text-slate-400 hover:text-slate-600 text-lg">✕</button>
+            </div>
+
+            <form onsubmit="handleSaveProject(event)" class="space-y-4">
+                <input type="hidden" id="project-id">
+
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="col-span-2">
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Project Title</label>
+                        <input type="text" id="project-title" required placeholder="e.g. E-Commerce Hub" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Icon / Emoji</label>
+                        <input type="text" id="project-icon" required placeholder="🛒" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm text-center font-bold focus:outline-none focus:border-indigo-500 focus:bg-white transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Subtitle / Feature Tagline</label>
+                    <input type="text" id="project-subtitle" required placeholder="e.g. Cart & Checkout" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Description</label>
+                    <textarea id="project-description" rows="3" required placeholder="Short summary of project features..." class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Tech Stack Tags (Comma separated)</label>
+                    <input type="text" id="project-tags" required placeholder="HTML/CSS, JavaScript, Tailwind" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:bg-white transition">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Card Gradient Theme</label>
+                        <select id="project-gradient" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-xs font-semibold focus:outline-none focus:border-indigo-500 focus:bg-white transition">
+                            <option value="from-indigo-100 via-slate-50 to-indigo-50">Indigo Gradient</option>
+                            <option value="from-teal-100 via-slate-50 to-teal-50">Teal Gradient</option>
+                            <option value="from-purple-100 via-slate-50 to-purple-50">Purple Gradient</option>
+                            <option value="from-amber-100 via-slate-50 to-amber-50">Amber Gradient</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Status</label>
+                        <select id="project-status" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-xs font-semibold focus:outline-none focus:border-indigo-500 focus:bg-white transition">
+                            <option value="Featured">Featured ⭐</option>
+                            <option value="Active">Active 🟢</option>
+                            <option value="Archived">Archived 📁</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+                    <button type="button" onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-slate-50">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-md shadow-indigo-200">Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <footer class="bg-white border-t border-slate-200 text-center py-6 text-slate-500 text-sm">
+        &copy; 2026 Shams Gomaa Portfolio Admin Dashboard. All rights reserved.
+    </footer>
+
+    <script src="dashboard.js"></script>
+    <script>
+        let db = getPortfolioData();
+
+        function initProjectsDashboard() {
+            renderProjects();
+        }
+
+        function renderProjects() {
+            const grid = document.getElementById("projects-grid");
+            grid.innerHTML = "";
+
+            db.projects.forEach(project => {
+                const tagsHTML = project.tags.map(t => `<span class="bg-indigo-50 text-indigo-700 text-xs px-2.5 py-1 rounded-full font-medium">${t}</span>`).join(" ");
+                const card = document.createElement("div");
+                card.className = "bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-44 bg-gradient-to-tr ${project.bgGradient} p-6 flex items-center justify-center border-b border-slate-100 relative">
+                            <span class="absolute top-4 right-4 text-[10px] font-bold px-2.5 py-1 rounded-full ${project.status === 'Featured' ? 'bg-amber-100 text-amber-800 border border-amber-200' : 'bg-slate-100 text-slate-700'}">${project.status}</span>
+                            <div class="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-sm border border-indigo-100 text-center w-full max-w-[180px]">
+                                <div class="w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center mx-auto mb-1.5 font-bold text-sm">${project.icon}</div>
+                                <span class="text-xs font-bold text-slate-800 block truncate">${project.title}</span>
+                                <span class="text-[10px] text-slate-400 block truncate">${project.subtitle}</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">${project.title}</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">${project.description}</p>
+                            <div class="flex flex-wrap gap-1.5">${tagsHTML}</div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-slate-100 pt-4">
+                        <button onclick="editProject(${project.id})" class="text-indigo-600 hover:text-indigo-800 text-xs font-bold flex items-center gap-1">
+                            ✏️ Edit
+                        </button>
+                        <button onclick="deleteProject(${project.id})" class="text-rose-500 hover:text-rose-700 text-xs font-bold flex items-center gap-1">
+                            🗑️ Delete
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openProjectModal(isEdit = false) {
+            document.getElementById("project-modal-title").textContent = isEdit ? "Edit Project" : "Add New Project";
+            document.getElementById("project-modal").classList.remove("hidden");
+        }
+
+        function closeProjectModal() {
+            document.getElementById("project-modal").classList.add("hidden");
+            document.getElementById("project-id").value = "";
+            document.getElementById("project-title").value = "";
+            document.getElementById("project-icon").value = "";
+            document.getElementById("project-subtitle").value = "";
+            document.getElementById("project-description").value = "";
+            document.getElementById("project-tags").value = "";
+        }
+
+        function editProject(id) {
+            const project = db.projects.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById("project-id").value = project.id;
+            document.getElementById("project-title").value = project.title;
+            document.getElementById("project-icon").value = project.icon;
+            document.getElementById("project-subtitle").value = project.subtitle;
+            document.getElementById("project-description").value = project.description;
+            document.getElementById("project-tags").value = project.tags.join(", ");
+            document.getElementById("project-gradient").value = project.bgGradient;
+            document.getElementById("project-status").value = project.status || "Active";
+
+            openProjectModal(true);
+        }
+
+        function deleteProject(id) {
+            if (confirm("Are you sure you want to delete this project?")) {
+                db.projects = db.projects.filter(p => p.id !== id);
+                savePortfolioData(db);
+                renderProjects();
+            }
+        }
+
+        function handleSaveProject(e) {
+            e.preventDefault();
+            const id = document.getElementById("project-id").value;
+            const title = document.getElementById("project-title").value;
+            const icon = document.getElementById("project-icon").value;
+            const subtitle = document.getElementById("project-subtitle").value;
+            const description = document.getElementById("project-description").value;
+            const tags = document.getElementById("project-tags").value.split(",").map(t => t.trim()).filter(Boolean);
+            const bgGradient = document.getElementById("project-gradient").value;
+            const status = document.getElementById("project-status").value;
+
+            if (id) {
+                
+                const existing = db.projects.find(p => p.id == id);
+                if (existing) {
+                    existing.title = title;
+                    existing.icon = icon;
+                    existing.subtitle = subtitle;
+                    existing.description = description;
+                    existing.tags = tags;
+                    existing.bgGradient = bgGradient;
+                    existing.status = status;
+                }
+            } else {
+                
+                const newProject = {
+                    id: Date.now(),
+                    title,
+                    icon,
+                    subtitle,
+                    description,
+                    tags,
+                    bgGradient,
+                    status
+                };
+                db.projects.push(newProject);
+            }
+
+            savePortfolioData(db);
+            renderProjects();
+            closeProjectModal();
+        }
+
+        window.onload = initProjectsDashboard;
+    </script>
+</body>
+</html>
