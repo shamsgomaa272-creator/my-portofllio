@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Shams Gomaa</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 min-h-screen flex flex-col justify-between font-['Poppins']">
+
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-105 transition duration-200">
+                    SG
+                </div>
+                <span class="text-xl font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition">
+                </span>
+            </a>
+
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition">Home</a>
+                <a href="about.html" class="text-indigo-600 font-semibold">About</a>
+                <a href="projects.html" class="hover:text-indigo-600 transition">Projects</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 flex-grow w-full">
+        <div class="grid md:grid-cols-12 gap-12 items-start">
+            <div class="md:col-span-7 space-y-6">
+                <span class="bg-indigo-50 text-indigo-600 border border-indigo-100 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase">
+                    Get to know me
+                </span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Passionate about building clean code & intuitive interfaces.
+                </h1>
+                <p class="text-slate-600 leading-relaxed text-base">
+                    Hello! I'm <strong class="text-slate-900">Shams Gomaa</strong>, a web developer based on creating sleek, responsive, and user-centric web applications. I bridge the gap between design and technical implementation.
+                </p>
+                <p class="text-slate-600 leading-relaxed text-base">
+                    My approach emphasizes clean structure, performance optimization, and accessible digital experiences. I enjoy solving complex logic problems and constantly learning modern web ecosystems.
+                </p>
+            </div>
+
+            <div class="md:col-span-5 bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/40 space-y-6 hover:shadow-2xl hover:border-indigo-200 transition duration-300">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xs uppercase border border-indigo-100">
+                            TECH
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">Technical Stack</h3>
+                            <p class="text-[11px] font-medium text-slate-400">Core Technologies</p>
+                        </div>
+                    </div>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" title="Active Skillset"></span>
+                </div>
+                
+                <div class="space-y-5">
+                    <div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Frontend Engineering</span>
+                        <div id="frontend-skills" class="flex flex-wrap gap-2">
+                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> HTML5 / CSS3
+                            </div>
+                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> JavaScript (ES6+)
+                            </div>
+                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> Tailwind CSS
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Backend & Database</span>
+                        <div id="backend-skills" class="flex flex-wrap gap-2">
+                            <div class="bg-slate-50 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-teal-500"></span> Node.js
+                            </div>
+                            <div class="bg-slate-50 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-teal-500"></span> MongoDB
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2.5">Tools & Environment</span>
+                        <div id="tools-skills" class="flex flex-wrap gap-2">
+                            <div class="bg-slate-50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-purple-500"></span> Git & GitHub
+                            </div>
+                            <div class="bg-slate-50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-purple-500"></span> VS Code
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 text-center py-6 text-slate-500 text-sm">
+        &copy; 2026 Shams Gomaa. All rights reserved.
+    </footer>
+
+    <script>
+        fetch('http://localhost:5000/api/skills')
+            .then(res => res.json())
+            .then(res => {
+                const skills = res.data || [];
+                if (skills.length > 0) {
+                    const frontendContainer = document.getElementById('frontend-skills');
+                    const backendContainer = document.getElementById('backend-skills');
+                    const toolsContainer = document.getElementById('tools-skills');
+
+                    const front = skills.filter(s => (s.category || '').toLowerCase() === 'frontend');
+                    const back = skills.filter(s => (s.category || '').toLowerCase() === 'backend');
+                    const tools = skills.filter(s => (s.category || '').toLowerCase() !== 'frontend' && (s.category || '').toLowerCase() !== 'backend');
+
+                    if (front.length > 0 && frontendContainer) {
+                        frontendContainer.innerHTML = front.map(s => `
+                            <div class="bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span> ${s.name}
+                            </div>
+                        `).join('');
+                    }
+
+                    if (back.length > 0 && backendContainer) {
+                        backendContainer.innerHTML = back.map(s => `
+                            <div class="bg-slate-50 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-teal-500"></span> ${s.name}
+                            </div>
+                        `).join('');
+                    }
+
+                    if (tools.length > 0 && toolsContainer) {
+                        toolsContainer.innerHTML = tools.map(s => `
+                            <div class="bg-slate-50 hover:bg-purple-50 hover:text-purple-700 hover:border-purple-200 border border-slate-200/80 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-xl flex items-center gap-2 transition duration-200 shadow-sm cursor-default">
+                                <span class="w-2 h-2 rounded-full bg-purple-500"></span> ${s.name}
+                            </div>
+                        `).join('');
+                    }
+                }
+            })
+            .catch(() => {});
+    </script>
+</body>
+</html>
